@@ -19,6 +19,8 @@ class _SignInViewState extends State<SignInView> {
   final _emailController = TextEditingController();
   final _entrepriseController = TextEditingController();
   final _passwordController = TextEditingController();
+  final List<String> _statuts = ['Étudiant', 'Alumni'];
+  String? _selectedStatut;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +59,34 @@ class _SignInViewState extends State<SignInView> {
                 hintText: "Entrez votre mot de passe",
                 controller: _passwordController,
               ),
+              Container(
+                margin: const EdgeInsets.all(8.0),
+                width: double.infinity,
+                constraints: const BoxConstraints(maxWidth: 400),
+                child: DropdownButtonFormField<String>(
+                  decoration: InputDecoration(
+                    labelText: 'Vous êtes...',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey.withOpacity(0.1),
+                  ),
+                  hint: const Text('Vous êtes...'),
+                  value: _selectedStatut,
+                  items: _statuts.map((String statut) {
+                    return DropdownMenuItem<String>(
+                      value: statut,
+                      child: Text(statut),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      _selectedStatut = newValue;
+                    });
+                  },
+                ),
+              ),
               const SizedBox(height: 32),
               WhiteButton(
                 text: "S'inscrire",
@@ -66,6 +96,7 @@ class _SignInViewState extends State<SignInView> {
                   final email = _emailController.text;
                   final entreprise = _entrepriseController.text;
                   final password = _passwordController.text;
+                  final statut = _selectedStatut;
 
                   Navigator.push(
                     context,
