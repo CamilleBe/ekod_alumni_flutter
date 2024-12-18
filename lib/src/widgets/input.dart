@@ -10,7 +10,7 @@ class InscriptionInput extends StatelessWidget {
   final FontWeight fontWeight;
   final double fontSize;
 
-  InscriptionInput({
+  const InscriptionInput({
     required this.label,
     required this.hintText,
     this.borderRadius = 10.0,
@@ -27,7 +27,8 @@ class InscriptionInput extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(margin),
       width: double.infinity,
-      child: TextField(
+      constraints: const BoxConstraints(maxWidth: 400),
+      child: TextFormField(
         decoration: InputDecoration(
           labelText: label,
           hintText: hintText,

@@ -20,8 +20,20 @@ class SignInView extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               InscriptionInput(
-                label: "Nom d'utilisateur",
-                hintText: "Entrez votre nom d'utilisateur",
+                label: "Nom",
+                hintText: "Entrez votre nom",
+              ),
+              InscriptionInput(
+                label: "Prénom",
+                hintText: "Entrez votre prénom",
+              ),
+              InscriptionInput(
+                label: "E-mail",
+                hintText: "Entrez votre e-mail",
+              ),
+              InscriptionInput(
+                label: "Votre entreprise",
+                hintText: "Entrez votre le nom de votre entreprise",
               ),
               const SizedBox(height: 32),
               WhiteButton(
