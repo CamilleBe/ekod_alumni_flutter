@@ -9,6 +9,7 @@ class InscriptionInput extends StatelessWidget {
   final Color textColor;
   final FontWeight fontWeight;
   final double fontSize;
+  final TextEditingController controller;
 
   const InscriptionInput({
     required this.label,
@@ -19,6 +20,7 @@ class InscriptionInput extends StatelessWidget {
     this.textColor = Colors.black,
     this.fontWeight = FontWeight.normal,
     this.fontSize = 16.0,
+    required this.controller,
     super.key,
   });
 
@@ -29,6 +31,7 @@ class InscriptionInput extends StatelessWidget {
       width: double.infinity,
       constraints: const BoxConstraints(maxWidth: 400),
       child: TextFormField(
+        controller: controller,
         decoration: InputDecoration(
           labelText: label,
           hintText: hintText,
