@@ -49,7 +49,6 @@ class WhiteButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: textColor,
           fontSize: fontsize,
           fontWeight: fontWeight,
         ),

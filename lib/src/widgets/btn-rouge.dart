@@ -32,7 +32,7 @@ class RedButton extends StatelessWidget {
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.resolveWith<Color>(
           (states) => states.contains(WidgetState.hovered)
-              ? Colors.white
+              ? const Color.fromARGB(255, 255, 255, 255)
               : backgroundColor,
         ),
         foregroundColor: WidgetStateProperty.resolveWith<Color>(
