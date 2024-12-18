@@ -5,6 +5,7 @@ import '../../../widgets/btn-rouge.dart';
 import '../../../widgets/logo-ekod.dart';
 import '../../../widgets/text.dart';
 import '../../../widgets/title.dart';
+import 'sign_in_view.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -36,7 +37,12 @@ class WelcomeView extends StatelessWidget {
               const SizedBox(height: 12),
               WhiteButton(
                 text: "S'inscrire",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SignInView()),
+                  );
+                },
               ),
             ],
           ),
