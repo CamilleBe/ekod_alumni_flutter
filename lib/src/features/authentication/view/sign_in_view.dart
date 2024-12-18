@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../widgets/bouton-blanc.dart';
+import '../../../widgets/input-password.dart';
 import '../../../widgets/input.dart';
 import '../../../widgets/title.dart';
 import 'connexion_view.dart';
@@ -17,6 +18,7 @@ class _SignInViewState extends State<SignInView> {
   final _prenomController = TextEditingController();
   final _emailController = TextEditingController();
   final _entrepriseController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,11 @@ class _SignInViewState extends State<SignInView> {
                 label: "Votre entreprise",
                 hintText: "Entrez votre le nom de votre entreprise",
               ),
+              PasswordInput(
+                label: "Mot de passe",
+                hintText: "Entrez votre mot de passe",
+                controller: _passwordController,
+              ),
               const SizedBox(height: 32),
               WhiteButton(
                 text: "S'inscrire",
@@ -58,6 +65,7 @@ class _SignInViewState extends State<SignInView> {
                   final prenom = _prenomController.text;
                   final email = _emailController.text;
                   final entreprise = _entrepriseController.text;
+                  final password = _passwordController.text;
 
                   Navigator.push(
                     context,
@@ -79,6 +87,7 @@ class _SignInViewState extends State<SignInView> {
     _prenomController.dispose();
     _emailController.dispose();
     _entrepriseController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 }
